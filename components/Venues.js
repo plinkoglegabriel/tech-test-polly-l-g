@@ -25,9 +25,8 @@ const Venues = () => {
 
   return (
     // Creating table
-    <div className="bg-white bg-opacity-80 p-16 text-center">
+    <div className="table-container">
       <h3 className="table-title">Venues</h3>
-      <div className="table-container">
         <table>
           <thead>
             <tr>
@@ -65,7 +64,6 @@ const Venues = () => {
           </tbody>
         </table>
       </div>
-    </div>
   );
 };
 

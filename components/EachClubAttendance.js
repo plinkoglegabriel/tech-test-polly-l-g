@@ -33,15 +33,13 @@ const Attendance = ({ clickedClub, attendedDates }) => {
     }
   }
   return (
-    <div className="bg-white bg-opacity-80 p-16 text-center">
+    <div className="table-container">
       <h2 className="attendance-title"> Club Attendance </h2>
-      
       {/* iterating over all keys from attendedDates  */}
       {Object.keys(clickedClubData).map((club, clubIndex) => (
         <div key={clubIndex}>
           {/* table for each club name */}
           <h3 className="attendance-table-title">{club}</h3>
-          <div className="table-container">
           <table>
             <thead>
               <tr>
@@ -65,7 +63,6 @@ const Attendance = ({ clickedClub, attendedDates }) => {
               ))}
             </tbody>
           </table>
-          </div>
         </div>
       ))}
     </div>

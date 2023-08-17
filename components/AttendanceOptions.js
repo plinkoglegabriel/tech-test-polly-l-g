@@ -1,5 +1,3 @@
-// You should use the data in /data/interactions.json
-// Display, and allow a user to interact with this info in an interesting way.
 import BalletIcon from '../media/ballet.png'
 import FootballIcon from '../media/football.png'
 import HomeworkIcon from '../media/homework.png'
@@ -25,23 +23,23 @@ const AttendanceOptions = () => {
       <div className="box-container">
         {/* three divs when clicked will set selectedDiv = to either 'members', 'venues' or 'attendance'*/}
         <div className="box-select" onClick={() => divClick('Ballet')}>
-          <h3 className="font-bold text-xl">Ballet Attendance</h3>
+          <h3>Ballet Attendance</h3>
           <Image className="icon" src={BalletIcon} alt="Ballet Icon"/>
         </div>
         <div className="box-select" onClick={() => divClick('Football Club')}>
-          <h3 className="font-bold text-xl">Football Club Attendance</h3>
+          <h3>Football Club Attendance</h3>
           <Image className="icon" src={FootballIcon} alt="Football Icon"/>
         </div>
         <div className="box-select" onClick={() => divClick('Homework Club')}>
-          <h3 className="font-bold text-xl">Homework Club Attendance</h3>
+          <h3>Homework Club Attendance</h3>
           <Image className="icon" src={HomeworkIcon} alt="Homework Icon"/>
         </div>
         <div className="box-select" onClick={() => divClick('Mentoring')}>
-          <h3 className="font-bold text-xl">Mentoring Attendance</h3>
+          <h3>Mentoring Attendance</h3>
           <Image className="icon" src={MentoringIcon} alt="Mentoring Icon"/>
         </div>
         <div className="box-select" onClick={() => divClick('Tutoring')}>
-          <h3 className="font-bold text-xl">Tutoring</h3>
+          <h3>Tutoring</h3>
           <Image className="icon" src={TutoringIcon} alt="Tutoring Icon"/>
         </div>
       </div>

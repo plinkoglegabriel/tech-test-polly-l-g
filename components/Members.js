@@ -22,7 +22,7 @@ const Members = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-80 p-16 text-center">
+    <div className="table-container">
       <h3 className="table-title">Members</h3>
       {/* Creating table */}
       <table>
