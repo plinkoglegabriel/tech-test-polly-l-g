@@ -126,8 +126,16 @@ a {
 
 }
 
+h2 {
+ font-size: 3em;
+ font-weight: bold;
+  padding: 2rem;
+  margin-bottom: -5rem;
+}
+
 h3 {
   font-size: 1.5em;
+  font-weight: bold;
 }
 table {
   margin-left: auto;
@@ -139,14 +147,16 @@ td, th {
   padding: 0.75rem;
   border: solid black 2px;
   max-width: 20%;
+
 }
 
-.class-container {
+.table-container {
   overflow-x: auto;
+  flex: 1;
 }
 
 th {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 
 }
 
@@ -159,7 +169,8 @@ th {
 }
 
 .table-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
-  padding: 1rem;
+  padding: 2rem;
+  margin-top: 3rem;
 }
