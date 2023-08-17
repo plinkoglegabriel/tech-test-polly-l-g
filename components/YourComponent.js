@@ -7,7 +7,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Members from './Members';
 import Venues from './Venues';
-import Attendance from './Attendance';
+import Attendance from './AttendanceOptions';
 
 
 const YourComponent = () => {

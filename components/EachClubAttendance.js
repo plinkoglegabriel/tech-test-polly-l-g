@@ -1,43 +1,43 @@
 import React from 'react';
 import interactionsData from '../data/interactions.json';
 
-
-const Attendance = () => {
+const Attendance = ({ clickedClub, attendedDates }) => {
   // function to format the date of attendance/interaction to exclude the time
   const formattedDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
-  // creating empty object called attendedDates
-  const attendedDates = {};
+  // collects attendance data for the clicked club if exists
+  const clickedClubData = attendedDates[clickedClub] || {};
 
-  // for loop through interactions.json 
+  // iterate over interactionsData relevant to the clicked club
   for (let i = 0; i < interactionsData.length; i++) {
     // stores interaction at current index as interaction
     const interaction = interactionsData[i];
-    // extracts club/activity name and member details from interactions.json and gets stored in attendedDates
+    // extracts club/activity name and member details from interactionsData
     const { name, member } = interaction;
 
-  // if name of activity is not already in attendedDates then create new property in attendedDates with that activity name
-    if (!attendedDates[name]) {
-      attendedDates[name] = {};
+    // checks if the interaction is for the clicked club
+    if (name === clickedClub) {
+      // if name of activity is not already in clickedClubData then create new property in clickedClubData with that activity name
+      if (!clickedClubData[name]) {
+        clickedClubData[name] = {};
+      }
+    // if name of member is not already in clickedClubData[name] then create new property in clickedClubData[name] with that member's name
+      if (!clickedClubData[name][member.name]) {
+        clickedClubData[name][member.name] = [];
+      }
+       // add interaction dates to nested object (for specific person for CLICKED club/activity)
+      clickedClubData[name][member.name].push(formattedDate(interaction.date));
     }
-
-    // if name of member is not already in attendedDates[name] then create new property in attendedDates[name] with that member's name
-    if (!attendedDates[name][member.name]) {
-      attendedDates[name][member.name] = [];
-    }
-
-    // add interaction dates to nested object (for specific person for specific club/activity)
-    attendedDates[name][member.name].push(formattedDate(interaction.date));
   }
-
   return (
     <div className="bg-white bg-opacity-80 p-16 text-center">
       <h2 className="attendance-title"> Club Attendance </h2>
+      
       {/* iterating over all keys from attendedDates  */}
-      {Object.keys(attendedDates).map((club, clubIndex) => (
+      {Object.keys(clickedClubData).map((club, clubIndex) => (
         <div key={clubIndex}>
           {/* table for each club name */}
           <h3 className="attendance-table-title">{club}</h3>
@@ -51,13 +51,13 @@ const Attendance = () => {
             </thead>
             <tbody>
               {/* iterates over an array of all members attending a specific club */}
-              {Object.keys(attendedDates[club]).map((member, memberIndex) => (
+              {Object.keys(clickedClubData[club]).map((member, memberIndex) => (
                 // for that member it lits their name and the dates they atteded that particular club
                 <tr key={memberIndex}>
                   <td>{member}</td>
                   <td>
                     {/* iterates over an array of all the dates a specific members attended a specific club*/}
-                    {attendedDates[club][member].map((date, dateIndex) => (
+                    {clickedClubData[club][member].map((date, dateIndex) => (
                       <div key={dateIndex}>{date}</div>
                     ))}
                   </td>
