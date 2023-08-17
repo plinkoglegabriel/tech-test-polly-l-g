@@ -35,7 +35,7 @@ const Attendance = () => {
 
   return (
     <div className="bg-white bg-opacity-80 p-16 text-center">
-      <h2> Club Attendance </h2>
+      <h2 className="attendance-title"> Club Attendance </h2>
       {/* iterating over all keys from attendedDates  */}
       {Object.keys(attendedDates).map((club, clubIndex) => (
         <div key={clubIndex}>
