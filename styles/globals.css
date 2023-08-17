@@ -168,9 +168,15 @@ th {
 
 }
 
-.table-title {
+.attendance-table-title {
   font-size: 2rem;
   font-weight: bold;
   padding: 2rem;
   margin-top: 3rem;
+}
+
+.table-title {
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 2rem;
 }

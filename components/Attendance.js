@@ -40,7 +40,7 @@ const Attendance = () => {
       {Object.keys(attendedDates).map((club, clubIndex) => (
         <div key={clubIndex}>
           {/* table for each club name */}
-          <h3 className="table-title">{club}</h3>
+          <h3 className="attendance-table-title">{club}</h3>
           <div className="table-container">
           <table>
             <thead>
